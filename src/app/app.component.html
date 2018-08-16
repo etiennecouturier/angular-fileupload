@@ -1,14 +1,17 @@
-<div style="width: 500px; margin: 20px" [fileUploadInputFor]="fileUploadQueue" class="upload-drop-zone">
+<div style="width: 700px; margin: 20px" [fileUploadInputFor]="fileUploadQueue" class="upload-drop-zone">
     Just drag and drop files here
 </div>
 
-<div style="width: 500px; margin: 20px">
+<div style="width: 700px; margin: 20px">
     <mat-file-upload-queue #fileUploadQueue
                            [fileAlias]="'name'"
                            [httpUrl]="'http://localhost:9000/upload'"
                            [httpRequestHeaders]="httpRequestHeaders"
                            [httpRequestParams]="httpRequestParams">
-            <mat-file-upload [file]="file" [id]="i"
-                             *ngFor="let file of fileUploadQueue.files; let i = index"></mat-file-upload>
+        <div  style="height: 400px; overflow-y: auto">
+                <mat-file-upload [file]="file" [id]="i"
+                                 *ngFor="let file of fileUploadQueue.files; let i = index">
+                </mat-file-upload>
+        </div>
     </mat-file-upload-queue>
 </div>
