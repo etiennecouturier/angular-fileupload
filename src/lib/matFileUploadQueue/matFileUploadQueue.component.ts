@@ -1,10 +1,9 @@
-import { Component, OnInit, OnDestroy, QueryList, ViewChildren, Input, ContentChildren, forwardRef } from '@angular/core';
-import { MatFileUpload } from './../matFileUpload/matFileUpload.component';
-import { Subscription } from 'rxjs/Subscription';
-import { Observable } from 'rxjs/Observable';
-import { merge } from 'rxjs/observable/merge';
-import { startWith } from 'rxjs/operators/startWith';
-import { HttpHeaders, HttpParams } from '@angular/common/http';
+import {Component, ContentChildren, forwardRef, Input, OnDestroy, QueryList} from '@angular/core';
+import {MatFileUpload} from './../matFileUpload/matFileUpload.component';
+import {Subscription} from 'rxjs/Subscription';
+import {merge} from 'rxjs/observable/merge';
+import {startWith} from 'rxjs/operators/startWith';
+import {HttpHeaders, HttpParams} from '@angular/common/http';
 
 
 /**

@@ -1,14 +1,22 @@
 {
-    "compilerOptions": {
-       "target": "es5",
-       "module": "es2015",
-       "sourceMap":   true,
-       "moduleResolution": "node",
-       "emitDecoratorMetadata": true,
-       "experimentalDecorators": true,
-       "declaration": true,
-       "outDir": "./dist",
-       "lib": ["es2015", "dom"]
-    },
-    "files": ["./src/lib/matFileUpload.ts"]
- }
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es2015",
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "declaration": true,
+    "outDir": "./dist",
+    "lib": [
+      "es2015",
+      "dom"
+    ],
+    "typeRoots": [
+      "../../node_modules/@types"
+    ]
+  },
+  "files": [
+    "./src/lib/matFileUpload.ts"
+  ]
+}
