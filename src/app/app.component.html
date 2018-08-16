@@ -4,11 +4,11 @@
 
 <div style="width: 500px; margin: 20px">
     <mat-file-upload-queue #fileUploadQueue
-        [fileAlias]="'name'"
-        [httpUrl]="'http://localhost:9000/upload'"
-        [httpRequestHeaders]="httpRequestHeaders"
-        [httpRequestParams]="httpRequestParams">
-    
-        <mat-file-upload [file]="file" [id]="i" *ngFor="let file of fileUploadQueue.files; let i = index"></mat-file-upload>
+                           [fileAlias]="'name'"
+                           [httpUrl]="'http://localhost:9000/upload'"
+                           [httpRequestHeaders]="httpRequestHeaders"
+                           [httpRequestParams]="httpRequestParams">
+            <mat-file-upload [file]="file" [id]="i"
+                             *ngFor="let file of fileUploadQueue.files; let i = index"></mat-file-upload>
     </mat-file-upload-queue>
 </div>
