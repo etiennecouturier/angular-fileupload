@@ -1,5 +1,5 @@
 import {Component, ContentChildren, forwardRef, Input, OnDestroy, QueryList} from '@angular/core';
-import {MatFileUpload} from './../matFileUpload/matFileUpload.component';
+import {MatFileUpload} from '../matFileUpload/matFileUpload.component';
 import {Subscription} from 'rxjs/Subscription';
 import {merge} from 'rxjs/observable/merge';
 import {startWith} from 'rxjs/operators/startWith';

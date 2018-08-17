@@ -21,7 +21,4 @@ export class AppComponent {
     [param: string]: string | string[];
   } = new HttpParams().set("sampleRequestParam", "requestValue").set("sampleRequestParam1", "requestValue1");
 
-  public uploadEvent($event: any) {
-    console.log('from client' + JSON.stringify($event));
-  }
 }
