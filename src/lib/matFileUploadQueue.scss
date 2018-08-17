@@ -1,4 +1,4 @@
-.dropzone {
+.drop-zone {
     background-color: brown;
     width: 100px;
     height: 100px;
@@ -39,8 +39,7 @@ a.disabled {
 /* skin.css Style*/
 .upload-drop-zone {
   color: #ccc;
-  border-style: dashed;
-  border-color: #ccc;
+  border: dashed #ccc;
   line-height: 200px;
   text-align: center
 }

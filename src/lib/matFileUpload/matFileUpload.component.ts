@@ -73,7 +73,7 @@ export class MatFileUpload implements OnDestroy {
 
     private progressPercentage: number = 0;
     public loaded: number = 0;
-    private total: number = 0;
+    public total: number = 0;
     private _file: any;
     private _id: number;
     private fileUploadSubscription: any;
