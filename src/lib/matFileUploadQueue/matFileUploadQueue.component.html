@@ -1,2 +1,6 @@
 <ng-content></ng-content>
-<br>
+<div *ngIf="withBottoms">
+    <br/>
+    <button mat-raised-button color="primary" *ngIf="files.length > 0" (click)="fileUploadQueue.uploadAll()">Upload All</button>
+    <button mat-raised-button color="primary" *ngIf="files.length > 0" (click)="fileUploadQueue.removeAll()">Remove All</button>
+</div>

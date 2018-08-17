@@ -16,7 +16,11 @@ import {HttpHeaders, HttpParams} from '@angular/common/http';
   })
   export class MatFileUploadQueue implements OnDestroy {
 
-    @ContentChildren(forwardRef(() => MatFileUpload)) fileUploads: QueryList<MatFileUpload>;
+    @ContentChildren(forwardRef(() => MatFileUpload))
+    fileUploads: QueryList<MatFileUpload>;
+
+    @Input()
+    withBottoms: Boolean = false;
 
     /** Subscription to remove changes in files. */
     private _fileRemoveSubscription: Subscription | null;

@@ -13,7 +13,7 @@ import {MatFileUploadQueue} from '../matFileUploadQueue/matFileUploadQueue.compo
     host: {
         'class': 'mat-file-upload',
     },
-    styleUrls: ['./../matFileUploadQueue.scss'],
+    styleUrls: ['./../matFileUploadQueue.scss']
 })
 export class MatFileUpload implements OnDestroy {
 
