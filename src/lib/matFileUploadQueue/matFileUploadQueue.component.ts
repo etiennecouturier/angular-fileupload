@@ -72,29 +72,19 @@ export class MatFileUploadQueue implements OnDestroy, AfterContentInit {
 
     public uploadAll() {
         this.fileUploads.forEach((fileUpload) => {
-            fileUpload.upload()
+            if (fileUpload.loaded != fileUpload.total && fileUpload.total != 0) {
+                fileUpload.upload()
+            }
         });
     }
 
     public removeAll() {
-        // this.files = this.files.filter((file, i, arr) => {
-        //     this
-        //     return file.loaded != 0
-        // })
-
         for (var index = this.files.length -1; index >= 0; index--) {
             let fileUpload = this.fileUploads.find(file => file.id == index);
             if (fileUpload.loaded == 0) {
-                // this.files.splice(i, 1);
                 fileUpload.remove()
             }
         }
-
-        // this.files.forEach((file) => {
-        //     // if (fileUpload.loaded == 0) {
-        //         this.files.splice(file.id, 1)
-        //     // }
-        // });
     }
 
     ngOnDestroy() {
