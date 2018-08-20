@@ -1,4 +1,4 @@
-import {Directive, ElementRef, EventEmitter, HostListener, Input, Output,} from '@angular/core';
+import {Directive, ElementRef, EventEmitter, HostListener, Input, Input, Output,} from '@angular/core';
 
 /**
  * A material design file upload queue component.
@@ -10,6 +10,9 @@ import {Directive, ElementRef, EventEmitter, HostListener, Input, Output,} from 
     private _queue: any = null;
     private _element: HTMLElement;
     @Output() public onFileSelected: EventEmitter<File[]> = new EventEmitter<File[]>();
+
+    @Input('acceptedExtensions')
+    acceptedExtensions: Array<String>;
 
     constructor(private element: ElementRef) {
         this._element = this.element.nativeElement;
@@ -39,8 +42,11 @@ import {Directive, ElementRef, EventEmitter, HostListener, Input, Output,} from 
       let files = event.dataTransfer.files;
       this.onFileSelected.emit(files);
 
-      for (var i = 0; i < files.length; i++) {
-        this._queue.add(files[i]);
+      for (let i = 0; i < files.length; i++) {
+        let extension = files[i].name.split(".").pop();
+        if (this.acceptedExtensions.indexOf(extension) > -1) {
+            this._queue.add(files[i]);
+        }
       }
       event.preventDefault();
       event.stopPropagation();
