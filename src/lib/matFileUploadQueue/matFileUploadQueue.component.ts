@@ -1,4 +1,4 @@
-import {Component, ContentChildren, forwardRef, Input, OnDestroy, QueryList} from '@angular/core';
+import {AfterContentInit, Component, ContentChildren, forwardRef, Input, OnDestroy, QueryList} from '@angular/core';
 import {MatFileUpload} from '../matFileUpload/matFileUpload.component';
 import {Subscription} from 'rxjs/Subscription';
 import {merge} from 'rxjs/observable/merge';
@@ -14,7 +14,7 @@ import {HttpHeaders, HttpParams} from '@angular/common/http';
     templateUrl: `matFileUploadQueue.component.html`,
     exportAs: 'matFileUploadQueue',
 })
-export class MatFileUploadQueue implements OnDestroy {
+export class MatFileUploadQueue implements OnDestroy, AfterContentInit {
 
     @ContentChildren(forwardRef(() => MatFileUpload))
     fileUploads: QueryList<MatFileUpload>;
@@ -33,7 +33,7 @@ export class MatFileUploadQueue implements OnDestroy {
         return merge(...this.fileUploads.map(fileUpload => fileUpload.removeEvent));
     }
 
-    private files: Array<MatFileUpload> = [];
+    private files: Array<any> = [];
 
     @Input()
     httpUrl: string;
@@ -52,7 +52,6 @@ export class MatFileUploadQueue implements OnDestroy {
     fileAlias: string = "file";
 
     ngAfterContentInit() {
-        // When the list changes, re-subscribe
         this._changeSubscription = this.fileUploads.changes.pipe(startWith(null)).subscribe(() => {
             if (this._fileRemoveSubscription) {
                 this._fileRemoveSubscription.unsubscribe();
@@ -78,12 +77,24 @@ export class MatFileUploadQueue implements OnDestroy {
     }
 
     public removeAll() {
-        this.files.splice(0, this.files.length);
-        // this.files.forEach((file) => {
-        //     if (file.total != file.loaded) {
-        //         this.files.splice(file.id, 1);
-        //     }
+        // this.files = this.files.filter((file, i, arr) => {
+        //     this
+        //     return file.loaded != 0
         // })
+
+        for (var index = this.files.length -1; index >= 0; index--) {
+            let fileUpload = this.fileUploads.find(file => file.id == index);
+            if (fileUpload.loaded == 0) {
+                // this.files.splice(i, 1);
+                fileUpload.remove()
+            }
+        }
+
+        // this.files.forEach((file) => {
+        //     // if (fileUpload.loaded == 0) {
+        //         this.files.splice(file.id, 1)
+        //     // }
+        // });
     }
 
     ngOnDestroy() {

@@ -1,4 +1,5 @@
-import {Directive, ElementRef, EventEmitter, HostListener, Input, Input, Output,} from '@angular/core';
+import {Directive, ElementRef, EventEmitter, HostListener, Input, Output,} from '@angular/core';
+import {MatFileUploadQueue} from "./matFileUploadQueue/matFileUploadQueue.component";
 
 /**
  * A material design file upload queue component.
@@ -7,7 +8,7 @@ import {Directive, ElementRef, EventEmitter, HostListener, Input, Input, Output,
     selector: 'input[fileUploadInputFor], div[fileUploadInputFor]',
   })
   export class FileUploadInputFor  {
-    private _queue: any = null;
+    private _queue: MatFileUploadQueue = null;
     private _element: HTMLElement;
     @Output() public onFileSelected: EventEmitter<File[]> = new EventEmitter<File[]>();
 
