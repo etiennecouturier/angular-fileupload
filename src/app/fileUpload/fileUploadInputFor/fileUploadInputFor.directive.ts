@@ -1,5 +1,5 @@
 import {Directive, ElementRef, EventEmitter, HostListener, Input, Output,} from '@angular/core';
-import {MatFileUploadQueue} from "./matFileUploadQueue/matFileUploadQueue.component";
+import {MatFileUploadQueue} from "../matFileUploadQueue/matFileUploadQueue.component";
 
 /**
  * A material design file upload queue component.
@@ -19,7 +19,6 @@ import {MatFileUploadQueue} from "./matFileUploadQueue/matFileUploadQueue.compon
         this._element = this.element.nativeElement;
     }
 
-
     @Input('fileUploadInputFor')
     set fileUploadQueue(value: any) {
         if (value) {
@@ -32,7 +31,7 @@ import {MatFileUploadQueue} from "./matFileUploadQueue/matFileUploadQueue.compon
       let files = this.element.nativeElement.files;
       this.onFileSelected.emit(files);
 
-      for (var i = 0; i < files.length; i++) {
+      for (let i = 0; i < files.length; i++) {
         this._queue.add(files[i]);
      }
      this.element.nativeElement.value = '';

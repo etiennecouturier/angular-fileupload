@@ -17,6 +17,6 @@
     ]
   },
   "files": [
-    "./src/lib/matFileUpload.ts"
+    "./src/app/fileUpload/matFileUpload.ts"
   ]
 }

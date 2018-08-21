@@ -1,12 +1,12 @@
 import {NgModule} from '@angular/core';
 import {MatFileUpload} from './matFileUpload/matFileUpload.component';
 import {MatFileUploadQueue} from './matFileUploadQueue/matFileUploadQueue.component';
-import {FileUploadInputFor} from './fileUploadInputFor.directive';
+import {FileUploadInputFor} from './fileUploadInputFor/fileUploadInputFor.directive';
 
 import {MatProgressBarModule, MatCardModule, MatButtonModule} from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 import {HttpClientModule} from '@angular/common/http';
-import {BytesPipe} from './bytes.pipe';
+import {BytesPipe} from '../core/pipe/bytes.pipe';
 import {CommonModule} from '@angular/common';
 import {MatFileUploadComposite} from "./matFileUploadComposite/mat-file-upload-composite.component";
 
