@@ -1,4 +1,4 @@
 import config from './rollup.config.umd.js';
 config.format = "es";
-config.dest = "dist/matFileUpload.esm.js";
+config.dest = "dist/file.esm.js";
 export default config;

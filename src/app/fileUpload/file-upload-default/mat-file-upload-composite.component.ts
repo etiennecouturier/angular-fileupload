@@ -1,6 +1,6 @@
 import {Component, Input, ViewChild} from '@angular/core';
 import {HttpHeaders, HttpParams} from '@angular/common/http';
-import {MatFileUploadQueue} from "../matFileUploadQueue/matFileUploadQueue.component";
+import {MatFileUploadQueue} from "../file-queue/matFileUploadQueue.component";
 
 
 /**

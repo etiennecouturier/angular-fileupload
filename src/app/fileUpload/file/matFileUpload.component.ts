@@ -1,6 +1,6 @@
 import {Component, EventEmitter, forwardRef, Inject, Input, OnDestroy, Output} from '@angular/core';
 import {HttpClient, HttpEventType, HttpHeaders, HttpParams} from '@angular/common/http';
-import {MatFileUploadQueue} from '../matFileUploadQueue/matFileUploadQueue.component';
+import {MatFileUploadQueue} from '../file-queue/matFileUploadQueue.component';
 
 
 /**
@@ -9,11 +9,11 @@ import {MatFileUploadQueue} from '../matFileUploadQueue/matFileUploadQueue.compo
 @Component({
     selector: 'mat-file-upload',
     templateUrl: `./matFileUpload.component.html`,
-    exportAs: 'matFileUpload',
+    exportAs: 'file',
     host: {
         'class': 'mat-file-upload',
     },
-    styleUrls: ['../matFileUploadQueue/matFileUploadQueue.scss']
+    styleUrls: ['../file-queue/matFileUploadQueue.scss']
 })
 export class MatFileUpload implements OnDestroy {
 
