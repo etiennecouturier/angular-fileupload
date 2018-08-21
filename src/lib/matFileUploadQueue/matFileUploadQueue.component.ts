@@ -79,7 +79,7 @@ export class MatFileUploadQueue implements OnDestroy, AfterContentInit {
     }
 
     public removeAll() {
-        for (var index = this.files.length -1; index >= 0; index--) {
+        for (let index = this.files.length -1; index >= 0; index--) {
             let fileUpload = this.fileUploads.find(file => file.id == index);
             if (fileUpload.loaded == 0) {
                 fileUpload.remove()
